@@ -12,12 +12,16 @@ namespace PlayerMovementSystem
         public PlayerInput Input { get; private set; }
         public Rigidbody Rigidbody { get; private set; }
 
+        public Transform MainCameraTransform { get; private set; }
+
         private PlayerMovementStateMachine movementStateMachine;
 
         private void Awake()
         {
             Input = GetComponent<PlayerInput>();
             Rigidbody = GetComponent<Rigidbody>();
+
+            MainCameraTransform = Camera.main.transform;
 
             movementStateMachine = new PlayerMovementStateMachine(this);
         }
