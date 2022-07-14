@@ -80,9 +80,10 @@ namespace PlayerMovementSystem
 
             float movementSpeed = GetMovementSpeed();
 
-            Vector3 currentPlayer2DVelocity = GetPlayer2DVelocity();
+            //Vector3 currentPlayer2DVelocity = GetPlayer2DVelocity();
 
-            stateMachine.Player.Rigidbody.AddForce(targetRotationDirection * movementSpeed - currentPlayer2DVelocity, ForceMode.VelocityChange);
+            //stateMachine.Player.Rigidbody.AddForce(targetRotationDirection * movementSpeed - currentPlayer2DVelocity, ForceMode.VelocityChange);
+            stateMachine.Player.Rigidbody.velocity = targetRotationDirection * movementSpeed;
         }
 
         private float Rotate(Vector3 direction)
